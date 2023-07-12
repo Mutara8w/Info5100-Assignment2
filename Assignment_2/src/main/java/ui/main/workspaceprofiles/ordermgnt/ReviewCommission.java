@@ -51,8 +51,6 @@ public class ReviewCommission extends javax.swing.JPanel {
         txtLargeOrders = new javax.swing.JTextField();
         lblSalesRank3 = new javax.swing.JLabel();
         txtSalesRank = new javax.swing.JTextField();
-        lblSalesRank4 = new javax.swing.JLabel();
-        txtTop3Rank = new javax.swing.JTextField();
         lblSalesRank5 = new javax.swing.JLabel();
         txtProductPromotion = new javax.swing.JTextField();
         lblSalesRank6 = new javax.swing.JLabel();
@@ -113,12 +111,6 @@ public class ReviewCommission extends javax.swing.JPanel {
 
         txtSalesRank.setEditable(false);
 
-        lblSalesRank4.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        lblSalesRank4.setForeground(new java.awt.Color(204, 0, 0));
-        lblSalesRank4.setText("TOP 3 Sales Bonus:");
-
-        txtTop3Rank.setEditable(false);
-
         lblSalesRank5.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         lblSalesRank5.setText("Product Promotion:");
 
@@ -177,16 +169,12 @@ public class ReviewCommission extends javax.swing.JPanel {
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(btnViewDetails, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(lblChart, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 710, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addComponent(lblSalesRank3)
                                 .addGap(74, 74, 74)
-                                .addComponent(txtSalesRank, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(60, 60, 60)
-                                .addComponent(lblSalesRank4)
-                                .addGap(59, 59, 59)
-                                .addComponent(txtTop3Rank)))))
+                                .addComponent(txtSalesRank, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(588, Short.MAX_VALUE))
         );
 
@@ -231,12 +219,9 @@ public class ReviewCommission extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtTop3Rank, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtSalesRank, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblSalesRank3)
-                        .addComponent(lblSalesRank4)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtSalesRank, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblSalesRank3))
                 .addGap(135, 135, 135))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -271,16 +256,16 @@ public class ReviewCommission extends javax.swing.JPanel {
             txtSalesRank.setText("Not yet have an order");
         }
         
-        //Initiate txtBonusForTop3Sales
-        if(txtSalesRank.getText().equals("1")){
-            txtTop3Rank.setText("200.0");
-        } else if (txtSalesRank.getText().equals("2")){
-            txtTop3Rank.setText("100.0");
-        } else if (txtSalesRank.getText().equals("3")){
-            txtTop3Rank.setText("50.0");
-        } else {
-            txtTop3Rank.setText("0.0");
-        }
+//        //Initiate txtBonusForTop3Sales
+//        if(txtSalesRank.getText().equals("1")){
+//            txtTop3Rank.setText("200.0");
+//        } else if (txtSalesRank.getText().equals("2")){
+//            txtTop3Rank.setText("100.0");
+//        } else if (txtSalesRank.getText().equals("3")){
+//            txtTop3Rank.setText("50.0");
+//        } else {
+//            txtTop3Rank.setText("0.0");
+//        }
         
         createCommissionGrowthChart(selectedSalesPerson);
     }//GEN-LAST:event_btnViewDetailsActionPerformed
@@ -355,7 +340,6 @@ public class ReviewCommission extends javax.swing.JPanel {
     private javax.swing.JLabel lblSalesRank1;
     private javax.swing.JLabel lblSalesRank2;
     private javax.swing.JLabel lblSalesRank3;
-    private javax.swing.JLabel lblSalesRank4;
     private javax.swing.JLabel lblSalesRank5;
     private javax.swing.JLabel lblSalesRank6;
     private javax.swing.JLabel lblSalesRank7;
@@ -369,6 +353,5 @@ public class ReviewCommission extends javax.swing.JPanel {
     private javax.swing.JTextField txtSalesRank;
     private javax.swing.JTextField txtSalesTarget;
     private javax.swing.JTextField txtThreshold;
-    private javax.swing.JTextField txtTop3Rank;
     // End of variables declaration//GEN-END:variables
 }

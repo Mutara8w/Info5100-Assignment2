@@ -1,12 +1,15 @@
 package ui.main.workspaceprofiles.ordermgnt;
 
 import java.awt.Color;
+import java.awt.Component;
 import model.business.Business;
 import model.customermgnt.CustomerProfile;
 import java.util.ArrayList;
+import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
 import model.ordermgnt.MasterOrderList;
 import model.ordermgnt.Order;
 import model.ordermgnt.OrderItem;
@@ -116,14 +119,14 @@ public class ProcessOrder extends javax.swing.JPanel {
             ((DefaultTableModel) SupplierCatalogTable.getModel()).addRow(row);
         }
         
-        for(int j =0 ; j<SupplierCatalogTable.getRowCount(); j++){
-
-            Product p = (Product) SupplierCatalogTable.getValueAt(j, 0);
-            if(p.isPromotion()){
-                //設定這行爲不同顏色
-            }        
-            
-        }
+//        for(int j =0 ; j<SupplierCatalogTable.getRowCount(); j++){
+//
+//            Product p = (Product) SupplierCatalogTable.getValueAt(j, 0);
+//            if(p.isPromotion()){
+//                SupplierCatalogTable;
+//            }        
+//            
+//        }
     }
 
     @SuppressWarnings("unchecked")
@@ -699,7 +702,7 @@ public class ProcessOrder extends javax.swing.JPanel {
                 bonusForHighQuantity += 200; // bonus for high quantity
             }
             if(item.getSelectedProduct().isPromotion()){
-                bonusForPromotionProduct = item.getQuantity() * item.getActualPrice() * (item.getSelectedProduct().getPromotionCommissionRate());
+                bonusForPromotionProduct += (item.getQuantity() * item.getActualPrice()) * (item.getSelectedProduct().getPromotionCommissionRate());
             }
         }
         
